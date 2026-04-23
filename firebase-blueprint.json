@@ -1,0 +1,40 @@
+{
+  "entities": {
+    "Lead": {
+      "title": "Lead",
+      "description": "Captured lead from the landing page contact form or ebook download.",
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Full name of the lead."
+        },
+        "whatsapp": {
+          "type": "string",
+          "description": "WhatsApp contact number."
+        },
+        "email": {
+          "type": "string",
+          "format": "email",
+          "description": "Email address of the lead."
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Timestamp of when the lead was created."
+        },
+        "source": {
+          "type": "string",
+          "description": "Source of the lead (e.g., 'ebook_download', 'contact_form')."
+        }
+      },
+      "required": ["name", "whatsapp", "email", "createdAt"]
+    }
+  },
+  "firestore": {
+    "/leads/{leadId}": {
+      "schema": "Lead",
+      "description": "Collection of all captured leads."
+    }
+  }
+}
