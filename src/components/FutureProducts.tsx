@@ -1,5 +1,5 @@
 import { Sparkles, Users, Activity, Pill } from 'lucide-react';
-import Section, { FadeIn } from './Section';
+import Section, { FadeIn, TextReveal, BlurIn } from './Section';
 
 const upcoming = [
   {
@@ -29,13 +29,22 @@ export default function FutureProducts() {
         <FadeIn>
           <div className="flex items-center justify-center gap-3 mb-10 text-energy-orange">
             <div className="w-12 h-px bg-energy-orange/30" />
-            <span className="text-[10px] font-bold tracking-[0.5em] uppercase">Private Collection</span>
+            <BlurIn>
+              <span className="text-[10px] font-bold tracking-[0.5em] uppercase">Private Collection</span>
+            </BlurIn>
             <div className="w-12 h-px bg-energy-orange/30" />
           </div>
-          <h2 className="text-5xl md:text-7xl font-black mb-8 leading-[1.1] tracking-tighter">Sua próxima <br/><span className="text-energy-orange font-serif italic">evolução</span></h2>
-          <p className="text-lg text-zinc-400 mb-16 max-w-xl mx-auto font-light leading-relaxed">
-            Estamos desenhando experiências digitais exclusivas para elevar sua saúde a um novo patamar de sofisticação.
-          </p>
+          <h2 className="text-5xl md:text-7xl font-black mb-8 leading-[1.1] tracking-tighter">
+            <TextReveal>Sua próxima</TextReveal>
+            <TextReveal delay={0.2}>
+              <span className="text-energy-orange font-serif italic">evolução</span>
+            </TextReveal>
+          </h2>
+          <BlurIn delay={0.4}>
+            <p className="text-lg text-zinc-400 mb-16 max-w-xl mx-auto font-light leading-relaxed">
+              Estamos desenhando experiências digitais exclusivas para elevar sua saúde a um novo patamar de sofisticação.
+            </p>
+          </BlurIn>
         </FadeIn>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

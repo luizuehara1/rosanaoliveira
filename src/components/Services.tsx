@@ -1,5 +1,5 @@
 import { Apple, Dumbbell, Target, RefreshCw, Calendar } from 'lucide-react';
-import Section, { FadeIn } from './Section';
+import Section, { FadeIn, TextReveal, BlurIn } from './Section';
 
 const services = [
   {
@@ -34,19 +34,21 @@ export default function Services() {
   return (
     <Section id="servicos">
       <div className="text-center mb-20">
-        <FadeIn>
+        <BlurIn>
           <span className="text-sm font-bold tracking-[0.3em] uppercase text-zinc-500 mb-4 block">Especialidades</span>
-          <h2 className="text-4xl md:text-6xl font-bold">Como posso te ajudar</h2>
-        </FadeIn>
+        </BlurIn>
+        <h2 className="text-4xl md:text-6xl font-bold">
+          <TextReveal>Como posso te ajudar</TextReveal>
+        </h2>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         {services.map((service, i) => (
           <div key={i}>
-            <FadeIn delay={i * 0.1}>
-              <div className="h-full p-10 rounded-[45px] border border-white/5 bg-zinc-900/40 hover:bg-zinc-900/80 hover:border-lime-key/20 transition-all duration-500 group flex flex-col shadow-lg">
+            <FadeIn delay={i * 0.1} y={30}>
+              <div className="h-full p-10 rounded-[45px] border border-white/5 bg-zinc-900/40 hover:bg-zinc-900/80 hover:border-lime-key/20 transition-all duration-500 group flex flex-col shadow-lg hover:-translate-y-2">
                 <div className="w-14 h-14 rounded-2xl flex items-center justify-center mb-10 bg-white/5 group-hover:bg-lime-key/10 transition-colors">
-                  <div className="text-lime-key scale-110">
+                  <div className="text-lime-key group-hover:scale-125 transition-transform duration-500">
                     {service.icon}
                   </div>
                 </div>

@@ -1,5 +1,5 @@
 import { Check, User, Instagram, MessageSquareHeart } from 'lucide-react';
-import Section, { FadeIn } from './Section';
+import Section, { FadeIn, TextReveal, BlurIn } from './Section';
 
 const benefits = [
   "Emagrecimento sustentável",
@@ -56,31 +56,47 @@ export default function Authority() {
         <FadeIn delay={0.2}>
           <div>
             <h2 className="text-3xl md:text-5xl font-bold mb-8 leading-tight">
-              Mais do que uma dieta, um acompanhamento que <span className="text-energy-orange italic">transforma</span> seu desempenho e sua saúde.
+              <TextReveal>
+                Mais do que uma dieta, um
+              </TextReveal>
+              <TextReveal delay={0.2}>
+                acompanhamento que <span className="text-energy-orange italic">transforma</span> 
+              </TextReveal>
+              <TextReveal delay={0.4}>
+                seu desempenho e sua saúde.
+              </TextReveal>
             </h2>
-            <p className="text-lg text-zinc-400 mb-10 leading-relaxed font-light">
-              Dra. Rosana Oliveira é especialista em Nutrição Esportiva, Nutrigenética e Funcional, 
-              atendendo em Sorocaba/SP e online. Sua missão é guiar pessoas na jornada de
-              redescobrimento do próprio potencial através de ciência e estratégia personalizada.
-            </p>
+            <BlurIn delay={0.6}>
+              <p className="text-lg text-zinc-400 mb-10 leading-relaxed font-light">
+                Dra. Rosana Oliveira é especialista em Nutrição Esportiva, Nutrigenética e Funcional, 
+                atendendo em Sorocaba/SP e online. Sua missão é guiar pessoas na jornada de
+                redescobrimento do próprio potencial através de ciência e estratégia personalizada.
+              </p>
+            </BlurIn>
 
             <ul className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
               {benefits.map((benefit, i) => (
-                <li key={i} className="flex items-center gap-4 group">
-                  <div className="w-10 h-10 rounded-full bg-lime-key/10 flex items-center justify-center border border-lime-key/20 group-hover:bg-lime-key transition-colors duration-300">
-                    <Check className="w-5 h-5 text-lime-key group-hover:text-black transition-colors" />
-                  </div>
-                  <span className="text-zinc-200 font-medium">{benefit}</span>
+                <li key={i}>
+                  <FadeIn delay={0.7 + i * 0.1} y={10}>
+                    <div className="flex items-center gap-4 group">
+                      <div className="w-10 h-10 rounded-full bg-lime-key/10 flex items-center justify-center border border-lime-key/20 group-hover:bg-lime-key transition-colors duration-300">
+                        <Check className="w-5 h-5 text-lime-key group-hover:text-black transition-colors" />
+                      </div>
+                      <span className="text-zinc-200 font-medium">{benefit}</span>
+                    </div>
+                  </FadeIn>
                 </li>
               ))}
             </ul>
 
-            <div className="p-8 border border-white/10 rounded-2xl bg-gradient-to-br from-white/5 to-transparent">
-              <p className="text-zinc-300 leading-relaxed italic">
-                "Meu foco não é apenas o que você come, mas como seu metabolismo responde 
-                e como isso influencia sua energia, produtividade e autoestima."
-              </p>
-            </div>
+            <FadeIn delay={1.2}>
+              <div className="p-8 border border-white/10 rounded-2xl bg-gradient-to-br from-white/5 to-transparent">
+                <p className="text-zinc-300 leading-relaxed italic">
+                  "Meu foco não é apenas o que você come, mas como seu metabolismo responde 
+                  e como isso influencia sua energia, produtividade e autoestima."
+                </p>
+              </div>
+            </FadeIn>
           </div>
         </FadeIn>
       </div>

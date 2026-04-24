@@ -1,5 +1,6 @@
+import { motion } from 'motion/react';
 import { Star, MapPin, Navigation } from 'lucide-react';
-import Section, { FadeIn } from './Section';
+import Section, { FadeIn, TextReveal, BlurIn } from './Section';
 
 const testimonials = [
   {
@@ -34,29 +35,35 @@ export default function TestimonialsAndLocation() {
               <span className="text-sm font-bold ml-2">5.0 (58 avaliações)</span>
             </div>
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
-              <h2 className="text-4xl md:text-6xl font-bold">Quem confia recomenda</h2>
-              <a 
-                href={googleBusinessLink}
-                target="_blank"
-                rel="noreferrer"
-                className="text-zinc-400 hover:text-white transition-colors text-xs font-bold tracking-widest flex items-center gap-2 group"
-              >
-                VER MAIS NO GOOGLE
-                <div className="w-8 h-[1px] bg-zinc-700 transition-all group-hover:w-12 group-hover:bg-lime-key" />
-              </a>
+              <h2 className="text-4xl md:text-6xl font-bold">
+                <TextReveal>Quem confia</TextReveal>
+                <TextReveal delay={0.2}>recomenda</TextReveal>
+              </h2>
+              <BlurIn delay={0.4}>
+                <a 
+                  href={googleBusinessLink}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-zinc-400 hover:text-white transition-colors text-xs font-bold tracking-widest flex items-center gap-2 group"
+                >
+                  VER MAIS NO GOOGLE
+                  <div className="w-8 h-[1px] bg-zinc-700 transition-all group-hover:w-12 group-hover:bg-lime-key" />
+                </a>
+              </BlurIn>
             </div>
           </FadeIn>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {testimonials.map((t, i) => (
-              <div key={i}>
-                <FadeIn delay={i * 0.1}>
-                  <div className="p-8 border border-white/5 bg-zinc-900 rounded-3xl h-full">
-                    <p className="text-lg text-zinc-300 italic mb-6 leading-relaxed">"{t.text}"</p>
-                    <p className="font-bold border-t border-white/10 pt-4">— {t.name}</p>
+              <FadeIn key={i} delay={0.2 + i * 0.15} y={15}>
+                <div className="p-8 border border-white/5 bg-zinc-900 rounded-3xl h-full hover:border-lime-key/30 transition-colors group">
+                  <div className="flex gap-1 mb-4 text-lime-key opacity-50 group-hover:opacity-100 transition-opacity">
+                    {[...Array(5)].map((_, s) => <Star key={s} className="w-3.5 h-3.5 fill-current" />)}
                   </div>
-                </FadeIn>
-              </div>
+                  <p className="text-lg text-zinc-300 italic mb-6 leading-relaxed">"{t.text}"</p>
+                  <p className="font-bold border-t border-white/10 pt-4 text-sm tracking-tight">— {t.name}</p>
+                </div>
+              </FadeIn>
             ))}
           </div>
 
@@ -76,9 +83,13 @@ export default function TestimonialsAndLocation() {
                     "https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&q=80&w=800",
                     "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=800"
                   ].map((url, i) => (
-                    <div 
+                    <motion.div 
                       key={i} 
                       className="flex-none w-[280px] md:w-[400px] snap-center"
+                      initial={{ opacity: 0, x: 20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: i * 0.1, duration: 0.8 }}
                     >
                       <div className="relative aspect-video rounded-3xl overflow-hidden group/item border border-white/10 shadow-2xl transition-all duration-500 hover:scale-[1.02] hover:z-10 hover:border-lime-key/50">
                         <img 
@@ -88,7 +99,7 @@ export default function TestimonialsAndLocation() {
                         />
                         <div className="absolute inset-0 bg-black/20 group-hover/item:bg-transparent transition-colors" />
                       </div>
-                    </div>
+                    </motion.div>
                   ))}
                 </div>
                 {/* Subtle horizontal scroll indicator for mobile */}
@@ -102,13 +113,14 @@ export default function TestimonialsAndLocation() {
           </FadeIn>
         </div>
 
-        <FadeIn delay={0.3}>
-          <div className="bg-zinc-900 border border-white/10 p-8 rounded-[40px] h-full flex flex-col">
-            <div className="w-16 h-16 rounded-2xl bg-lime-key/10 flex items-center justify-center mb-8 text-lime-key">
+        <FadeIn delay={0.3} y={30}>
+          <div className="bg-zinc-900 border border-white/10 p-8 rounded-[40px] h-full flex flex-col shadow-2xl relative overflow-hidden group">
+            <div className="absolute top-0 right-0 w-32 h-32 bg-lime-key/5 blur-3xl rounded-full" />
+            <div className="w-16 h-16 rounded-2xl bg-lime-key/10 flex items-center justify-center mb-8 text-lime-key group-hover:scale-110 transition-transform duration-500">
               <MapPin className="w-8 h-8" />
             </div>
             <h3 className="text-3xl font-bold mb-6">Onde estamos</h3>
-            <p className="text-zinc-400 mb-8 leading-relaxed">
+            <p className="text-zinc-400 mb-8 leading-relaxed font-light">
               Rua Professor Daniel Paulo Verano Pontes, 93 <br />
               Jardim Santa Rosália <br/>
               Sorocaba – SP
@@ -118,9 +130,9 @@ export default function TestimonialsAndLocation() {
               href={mapsLink}
               target="_blank"
               rel="noreferrer"
-              className="mt-auto w-full py-5 bg-white/5 border border-white/10 hover:bg-white/10 transition-all rounded-2xl font-bold flex items-center justify-center gap-2"
+              className="mt-auto w-full py-5 bg-white/5 border border-white/10 hover:bg-white/10 transition-all rounded-2xl font-bold flex items-center justify-center gap-2 group/btn"
             >
-              <Navigation className="w-5 h-5" />
+              <Navigation className="w-5 h-5 group-hover/btn:rotate-12 transition-transform" />
               VER NO GOOGLE MAPS
             </a>
           </div>

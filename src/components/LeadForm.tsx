@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Send, CheckCircle, BookOpen } from 'lucide-react';
-import Section, { FadeIn } from './Section';
+import Section, { FadeIn, TextReveal } from './Section';
 import { saveLead } from '../lib/firebase';
 
 export default function LeadForm() {
@@ -39,7 +39,12 @@ export default function LeadForm() {
               <span className="text-sm font-bold tracking-widest uppercase">Ebook Gratuito</span>
             </div>
             <h2 className="text-4xl md:text-6xl font-black mb-6 leading-tight">
-              Baixe seu guia estratégico gratuito
+              <TextReveal>
+                Baixe seu guia
+              </TextReveal>
+              <TextReveal delay={0.2}>
+                estratégico gratuito
+              </TextReveal>
             </h2>
             <p className="text-xl mb-8 font-medium opacity-80">
               Descubra como iniciar sua mudança de forma simples e estratégica. 

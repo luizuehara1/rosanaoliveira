@@ -12,12 +12,15 @@ import Services from './components/Services';
 import FutureProducts from './components/FutureProducts';
 import TestimonialsAndLocation from './components/TestimonialsAndLocation';
 import Footer from './components/Footer';
+import ScrollToTop from './components/ScrollToTop';
+import { TextReveal, FadeIn, BlurIn } from './components/Section';
 
 export default function App() {
   const whatsappLink = "https://wa.me/5515997489481?text=Olá%20vim%20pelo%20site";
 
   return (
     <div className="bg-black text-white selection:bg-lime-key selection:text-black">
+      <ScrollToTop />
       {/* Floating WhatsApp Button */}
       <motion.a
         href={whatsappLink}
@@ -69,25 +72,30 @@ export default function App() {
         <TestimonialsAndLocation />
         
         {/* Final CTA Section */}
-        <section className="py-24 bg-gradient-to-t from-lime-key/10 to-transparent">
+        <section className="py-32 bg-gradient-to-t from-lime-key/10 to-transparent">
           <div className="max-w-4xl mx-auto px-6 text-center">
-            <h2 className="text-4xl md:text-7xl font-black mb-10 leading-tight">
-              Tudo pronto para mudar <br/> seu estilo de vida?
-            </h2>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-              <a 
-                href={whatsappLink}
-                className="w-full sm:w-auto px-10 py-5 bg-lime-key text-black font-black rounded-full hover:scale-105 transition-all text-xl"
-              >
-                WHATSAPP
-              </a>
-              <button 
-                onClick={() => document.getElementById('ebook')?.scrollIntoView({ behavior: 'smooth' })}
-                className="w-full sm:w-auto px-10 py-5 border border-white/20 rounded-full font-bold hover:bg-white/5 transition-all text-xl"
-              >
-                BAIXAR EBOOK
-              </button>
-            </div>
+            <FadeIn>
+              <h2 className="text-4xl md:text-7xl font-black mb-10 leading-tight">
+                <TextReveal>Tudo pronto para mudar</TextReveal>
+                <TextReveal delay={0.2}>seu estilo de vida?</TextReveal>
+              </h2>
+            </FadeIn>
+            <BlurIn delay={0.4}>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+                <a 
+                  href={whatsappLink}
+                  className="w-full sm:w-auto px-12 py-6 bg-lime-key text-black font-black rounded-full hover:scale-105 active:scale-95 transition-all text-xl uppercase tracking-widest shadow-[0_20px_50px_rgba(163,230,53,0.3)]"
+                >
+                  WHATSAPP
+                </a>
+                <button 
+                  onClick={() => document.getElementById('ebook')?.scrollIntoView({ behavior: 'smooth' })}
+                  className="w-full sm:w-auto px-12 py-6 border border-white/20 rounded-full font-bold hover:bg-white/5 hover:scale-105 active:scale-95 transition-all text-xl uppercase tracking-widest"
+                >
+                  BAIXAR EBOOK
+                </button>
+              </div>
+            </BlurIn>
           </div>
         </section>
       </main>
