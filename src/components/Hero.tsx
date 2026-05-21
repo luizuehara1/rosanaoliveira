@@ -31,17 +31,16 @@ export default function Hero() {
           
           <h1 className="text-6xl md:text-[100px] font-black mb-10 leading-[0.95] tracking-tighter">
             <TextReveal delay={0.1}>
-              O corpo que você
+              O corpo que você merece,
             </TextReveal>
             <TextReveal delay={0.3}>
-              <span className="text-lime-key italic font-serif">merece</span>, com equilíbrio.
+              com <span className="text-lime-key italic font-serif">estratégia</span>.
             </TextReveal>
           </h1>
 
           <BlurIn delay={0.6}>
             <p className="text-lg md:text-xl text-zinc-400 max-w-2xl mx-auto mb-14 font-light leading-relaxed tracking-wide">
-              Nutrição estratégica para quem busca emagrecimento real, 
-              ganho de performance e uma vida vibrante e saudável.
+              Nutrição personalizada para emagrecimento, performance, saúde metabólica e longevidade.
             </p>
           </BlurIn>
 

@@ -55,29 +55,34 @@ export default function Authority() {
 
         <FadeIn delay={0.2}>
           <div>
-            <h2 className="text-3xl md:text-5xl font-bold mb-8 leading-tight">
+            <h2 className="text-3xl md:text-5xl font-extrabold mb-6 leading-tight tracking-tight text-white">
               <TextReveal>
-                Mais do que uma dieta, um
+                Mais do que uma dieta, uma
               </TextReveal>
               <TextReveal delay={0.2}>
-                acompanhamento que <span className="text-energy-orange italic">transforma</span> 
+                <span className="text-lime-key italic font-serif">estratégia</span> que transforma seu
               </TextReveal>
               <TextReveal delay={0.4}>
-                seu desempenho e sua saúde.
+                desempenho e sua saúde.
               </TextReveal>
             </h2>
+
             <BlurIn delay={0.6}>
-              <p className="text-lg text-zinc-400 mb-10 leading-relaxed font-light">
-                Dra. Rosana Oliveira é especialista em Nutrição Esportiva, Nutrigenética e Funcional, 
-                atendendo em Sorocaba/SP e online. Sua missão é guiar pessoas na jornada de
-                redescobrimento do próprio potencial através de ciência e estratégia personalizada.
+              <p className="text-base md:text-lg text-zinc-400 mb-6 leading-relaxed font-light">
+                Rosana Oliveira é nutricionista esportiva com foco em emagrecimento, performance, saúde metabólica e longevidade. Sua abordagem personalizada une estratégias nutricionais avançadas à interpretação genética aplicada à vida real.
               </p>
             </BlurIn>
 
-            <ul className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+            <BlurIn delay={0.8}>
+              <p className="text-sm md:text-base text-zinc-500 font-serif italic border-l-2 border-lime-key/40 pl-4 mb-10 leading-relaxed max-w-xl">
+                “Resultado não vem de extremismo, vem de estratégia, consistência e individualidade. Seu metabolismo muda com o tempo, e sua estratégia também precisa mudar.”
+              </p>
+            </BlurIn>
+
+            <ul className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {benefits.map((benefit, i) => (
                 <li key={i}>
-                  <FadeIn delay={0.7 + i * 0.1} y={10}>
+                  <FadeIn delay={0.9 + i * 0.1} y={10}>
                     <div className="flex items-center gap-4 group">
                       <div className="w-10 h-10 rounded-full bg-lime-key/10 flex items-center justify-center border border-lime-key/20 group-hover:bg-lime-key transition-colors duration-300">
                         <Check className="w-5 h-5 text-lime-key group-hover:text-black transition-colors" />
@@ -88,15 +93,6 @@ export default function Authority() {
                 </li>
               ))}
             </ul>
-
-            <FadeIn delay={1.2}>
-              <div className="p-8 border border-white/10 rounded-2xl bg-gradient-to-br from-white/5 to-transparent">
-                <p className="text-zinc-300 leading-relaxed italic">
-                  "Meu foco não é apenas o que você come, mas como seu metabolismo responde 
-                  e como isso influencia sua energia, produtividade e autoestima."
-                </p>
-              </div>
-            </FadeIn>
           </div>
         </FadeIn>
       </div>
