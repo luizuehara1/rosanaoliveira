@@ -55,16 +55,8 @@ export default function Authority() {
 
         <FadeIn delay={0.2}>
           <div>
-            <h2 className="text-3xl md:text-5xl font-extrabold mb-6 leading-tight tracking-tight text-white">
-              <TextReveal>
-                Mais do que uma dieta, uma
-              </TextReveal>
-              <TextReveal delay={0.2}>
-                <span className="text-lime-key italic font-serif">estratégia</span> que transforma seu
-              </TextReveal>
-              <TextReveal delay={0.4}>
-                desempenho e sua saúde.
-              </TextReveal>
+            <h2 className="text-3xl md:text-5xl font-extrabold mb-6 max-w-[760px] leading-[1.05] tracking-[-0.03em] text-white">
+              Mais do que uma dieta, uma <span className="text-lime-key italic font-serif">estratégia</span> que transforma seu desempenho e sua saúde.
             </h2>
 
             <BlurIn delay={0.6}>
