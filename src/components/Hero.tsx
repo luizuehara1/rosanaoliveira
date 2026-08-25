@@ -3,8 +3,8 @@ import { ArrowRight, Download } from 'lucide-react';
 import { TextReveal, BlurIn } from './Section';
 
 export default function Hero() {
-  const scrollToEbook = () => {
-    document.getElementById('ebook')?.scrollIntoView({ behavior: 'smooth' });
+  const scrollToProducts = () => {
+    document.getElementById('meus-produtos')?.scrollIntoView({ behavior: 'smooth' });
   };
 
   const whatsappLink = "https://wa.me/5515997489481?text=Olá%20vim%20pelo%20site%20e%20quero%20começar";
@@ -60,11 +60,11 @@ export default function Hero() {
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </a>
             <button 
-              onClick={scrollToEbook}
-              className="w-full sm:w-auto px-10 py-5 bg-transparent border border-white/20 text-white font-bold rounded-full hover:bg-white/5 hover:scale-105 transition-all flex items-center justify-center gap-2 text-sm tracking-widest"
+              onClick={scrollToProducts}
+              className="w-full sm:w-auto px-10 py-5 bg-transparent border border-white/20 text-white font-bold rounded-full hover:bg-white/5 hover:scale-105 transition-all flex items-center justify-center gap-2 text-sm tracking-widest cursor-pointer"
             >
               <Download className="w-5 h-5" />
-              BAIXAR EBOOK GRATUITO
+              CONHECER PRODUTOS
             </button>
           </motion.div>
         </motion.div>

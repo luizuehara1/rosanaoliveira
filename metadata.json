@@ -2,5 +2,5 @@
   "name": "Rosana Oliveira - Nutrição Premium",
   "description": "Landing page premium para nutricionista esportiva focada em emagrecimento, performance e mudança de estilo de vida real.",
   "requestFramePermissions": [],
-  "majorCapabilities": []
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

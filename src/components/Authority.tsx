@@ -2,10 +2,10 @@ import { Check, User, Instagram, MessageSquareHeart } from 'lucide-react';
 import Section, { FadeIn, TextReveal, BlurIn } from './Section';
 
 const benefits = [
-  "Emagrecimento sustentável",
-  "Ganho de massa magra",
-  "Estratégias personalizadas",
-  "Acompanhamento próximo"
+  "Emagrecimento sustentável e inteligente",
+  "Estratégias nutricionais personalizadas",
+  "Nutrição genética aplicada à vida real",
+  "Saúde metabólica, performance e longevidade"
 ];
 
 export default function Authority() {

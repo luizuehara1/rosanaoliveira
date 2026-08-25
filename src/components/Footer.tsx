@@ -21,6 +21,10 @@ export default function Footer() {
               <Instagram className="w-4 h-4" />
               Instagram
             </a>
+            <a href="https://pay.kiwify.com.br/cKLdBg0" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-xs font-bold tracking-widest text-zinc-500 hover:text-lime-key transition-colors uppercase">
+              <Sparkles className="w-4 h-4" />
+              Curso Whey
+            </a>
           </div>
           
           <p className="text-zinc-600 text-xs mt-4 uppercase tracking-[0.3em] font-bold">Sorocaba, SP</p>

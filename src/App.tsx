@@ -4,10 +4,10 @@
  */
 
 import { motion } from 'motion/react';
-import { MessageCircle, Instagram } from 'lucide-react';
+import { MessageCircle, Instagram, ShoppingBag } from 'lucide-react';
 import Hero from './components/Hero';
 import Authority from './components/Authority';
-import LeadForm from './components/LeadForm';
+import MyProducts from './components/MyProducts';
 import Services from './components/Services';
 import FutureProducts from './components/FutureProducts';
 import TestimonialsAndLocation from './components/TestimonialsAndLocation';
@@ -50,8 +50,11 @@ export default function App() {
           </div>
           <div className="hidden md:flex gap-8 text-xs font-bold uppercase tracking-widest text-zinc-400">
             <a href="#autoridade" className="hover:text-lime-key transition-colors">Sobre</a>
+            <a href="#meus-produtos" className="text-lime-key hover:text-white transition-colors flex items-center gap-1.5 font-extrabold">
+              <span className="w-1.5 h-1.5 rounded-full bg-lime-key animate-pulse" />
+              Meus Produtos
+            </a>
             <a href="#servicos" className="hover:text-lime-key transition-colors">Serviços</a>
-            <a href="#ebook" className="hover:text-lime-key transition-colors">Ebook</a>
             <a href="#prova-social" className="hover:text-lime-key transition-colors">Resultados</a>
           </div>
           <a 
@@ -66,7 +69,7 @@ export default function App() {
       <main>
         <Hero />
         <Authority />
-        <LeadForm />
+        <MyProducts />
         <Services />
         <FutureProducts />
         <TestimonialsAndLocation />
@@ -89,10 +92,10 @@ export default function App() {
                   WHATSAPP
                 </a>
                 <button 
-                  onClick={() => document.getElementById('ebook')?.scrollIntoView({ behavior: 'smooth' })}
-                  className="w-full sm:w-auto px-12 py-6 border border-white/20 rounded-full font-bold hover:bg-white/5 hover:scale-105 active:scale-95 transition-all text-xl uppercase tracking-widest"
+                  onClick={() => document.getElementById('meus-produtos')?.scrollIntoView({ behavior: 'smooth' })}
+                  className="w-full sm:w-auto px-12 py-6 border border-white/20 rounded-full font-bold hover:bg-white/5 hover:scale-105 active:scale-95 transition-all text-xl uppercase tracking-widest cursor-pointer"
                 >
-                  BAIXAR EBOOK
+                  VER PRODUTOS
                 </button>
               </div>
             </BlurIn>
