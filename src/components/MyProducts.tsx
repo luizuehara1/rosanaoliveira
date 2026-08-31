@@ -224,7 +224,7 @@ export default function MyProducts() {
                     rel="noopener noreferrer"
                     className="w-full py-4 px-6 rounded-full bg-white text-black hover:bg-lime-key font-extrabold text-sm uppercase tracking-wider flex items-center justify-center gap-2 hover:scale-[1.02] active:scale-[0.98] transition-all shadow-[0_10px_25px_rgba(255,255,255,0.15)] hover:shadow-[0_15px_30px_rgba(217,255,0,0.35)] cursor-pointer group/btn"
                   >
-                    <span>ACESSAR CURSO</span>
+                    <span>ACESSA MEU EBOOK</span>
                     <ArrowUpRight className="w-4 h-4 transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
                   </a>
                 </div>
